@@ -1,3 +1,3 @@
-# pylibs learning python libraries\n
-Requirements\n
+# pylibs learning python librarie
+Requirements
 Python 3.14.7
