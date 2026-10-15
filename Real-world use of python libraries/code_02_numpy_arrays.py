@@ -1,10 +1,15 @@
 import numpy as np
+import matplotlib.pyplot as plt
+# time in hours 
+time_h = np.array([
+    0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+    ])
 #24 hourly temperature readings in degrees Celsius
 temperatures_c = np.array([
-18.5, 18.0, 17.8, 17.5, 17.9, 19.0,
-21.5, 23.8, 25.6, 27.1, 28.3, 29.0,
-29.4, 29.1, 28.5, 27.6, 26.2, 24.8,
-23.4, 22.1, 21.0, 20.2, 19.6, 19.0
+    18.5, 18.0, 17.8, 17.5, 17.9, 19.0,
+    21.5, 23.8, 25.6, 27.1, 28.3, 29.0,
+    29.4, 29.1, 28.5, 27.6, 26.2, 24.8,
+    23.4, 22.1, 21.0, 20.2, 19.6, 19.0
 ])
 mean_temp = np.mean(temperatures_c)
 min_temp = np.min(temperatures_c)
@@ -15,3 +20,11 @@ print(f"Daily mean temperature: {mean_temp:.2f} C")
 print(f"Minimum temperature: {min_temp:.2f} C")
 print(f"Maximum temperature: {max_temp:.2f} C")
 print("First six Fahrenheit readings:", temperatures_f[:6])
+# plotting temperature against time to show difference
+plt.plot (time_h[:23], temperatures_c[:23], label = "temperature")
+plt.xlabel("Time (hours)")
+plt.ylabel("Temperature (°C)")
+plt.title("Change in temperature")
+plt.legend()
+plt.grid(True)
+plt.show()
